@@ -1,17 +1,17 @@
 class Spree::StockEmail < ActiveRecord::Base
 
-  belongs_to :product
+  belongs_to :variant
 
-  validates :product, presence: true
+  validates :variant, presence: true
   validates :email, presence: true, email: true
-  validates_uniqueness_of :email, conditions: -> { where(sent_at: nil) }, scope: :product_id, message: Spree.t('stock_email.messages.already_registered')
+  validates_uniqueness_of :email, conditions: -> { where(sent_at: nil) }, scope: :variant_id, message: Spree.t('stock_email.messages.already_registered')
 
-  def self.not_sent(product)
-    where(sent_at: nil, product_id: product.id)
+  def self.not_sent(variant)
+    where(sent_at: nil, variant_id: variant.id)
   end
 
-  def self.notify(product)
-    self.not_sent(product).each { |e| e.notify }
+  def self.notify(variant)
+    self.not_sent(variant).each { |e| e.notify }
   end
 
   def notify
