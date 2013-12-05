@@ -31,11 +31,13 @@ require 'spree/testing_support/factories'
 require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
+require 'spree/testing_support/capybara_ext'
 
 # Requires factories defined in lib/spree_stock_email/factories.rb
 require 'spree_stock_email/factories'
 
 RSpec.configure do |config|
+  config.include Spree::TestingSupport::UrlHelpers
   config.include FactoryGirl::Syntax::Methods
 
   config.mock_with :rspec
