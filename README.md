@@ -1,5 +1,7 @@
 #SpreeStockEmail
 
+[![Build Status](https://travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-1-stable)](https://travis-ci.org/tiagoamaro/spree_stock_email)
+
 Allow users to create notifications of when products are back in stock.
 
 This extension has no views, you will have to add those yourself sadly. If the current user is logged in then emails will be created based on their current email address, otherwise they are prompted to enter one.
