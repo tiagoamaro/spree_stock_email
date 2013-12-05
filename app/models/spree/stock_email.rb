@@ -4,19 +4,14 @@ class Spree::StockEmail < ActiveRecord::Base
 
   validates :product, presence: true
   validates :email, presence: true, email: true
+  validates_uniqueness_of :email, conditions: -> { where(sent_at: nil) }, scope: :product_id, message: Spree.t('stock_email.messages.already_registered')
 
-  validate :unique_product_email
-
-  def self.email_exists?(product, email)
-    exists?(sent_at: nil, product_id: product.id, email: email)
+  def self.not_sent(product)
+    where(sent_at: nil, product_id: product.id)
   end
 
   def self.notify(product)
-    where(sent_at: nil, product_id: product.id).each { |e| e.notify }
-  end
-
-  def email_exists?
-    self.class.email_exists?(product, email)
+    self.not_sent(product).each { |e| e.notify }
   end
 
   def notify
@@ -26,12 +21,7 @@ class Spree::StockEmail < ActiveRecord::Base
 
   private
 
-  def unique_product_email
-    errors.add :user, "already registered for notifications on this product" if email_exists?
-  end
-
   def mark_as_sent
     update_attribute :sent_at, Time.zone.now
   end
-
 end

@@ -19,6 +19,7 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
 require 'pry'
+require 'shoulda-matchers'
 require 'capybara/rspec'
 require 'capybara/rails'
 
