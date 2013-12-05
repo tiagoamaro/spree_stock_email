@@ -7,6 +7,5 @@ en:
       messages:
         already_registered: "Already registered for notifications on this product"
         back_in_stock_email_message: "We'll email you when %{product} is back in stock!"
-        there_was_a_problem: "There was a problem setting up your email alert. Please try again."
       email:
           subject: "Products are back in stock!"
