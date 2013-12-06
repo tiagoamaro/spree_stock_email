@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-1-stable)](https://travis-ci.org/tiagoamaro/spree_stock_email)
 
+> Note:
+> This fork uses product's variants to notify users
+
 Allow users to create notifications of when products are back in stock.
 
 This extension has no views, you will have to add those yourself sadly. If the current user is logged in then emails will be created based on their current email address, otherwise they are prompted to enter one.
@@ -10,12 +13,12 @@ Here is a basic partial:
 
 ```erb
 <% if spree_current_user %>
-  <%= link_to stock_emails_path(stock_email: {product: @product.id}), method: :post do %>
+  <%= link_to stock_emails_path(stock_email: {product: @variant.id}), method: :post do %>
       Notify me
   <% end %>
 <% else %>
   <%= form_for :stock_email, url: stock_emails_path do |form| %>
-    <%= form.hidden_field :product, value: @product.id %>
+    <%= form.hidden_field :product, value: @variant.id %>
     <%= form.label :email, "Your email address" %>
     <%= form.text_field :email %>
     <%= button_tag class: 'button', type: :submit do %>
