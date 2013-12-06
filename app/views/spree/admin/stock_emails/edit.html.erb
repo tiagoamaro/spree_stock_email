@@ -1,0 +1,24 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => { :current => 'Stock Mailer' } %>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @stock_email } %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:back_to_stock_mailer), admin_product_stock_emails_url(@product), :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= form_for [:admin, @product, @stock_email] do |f| %>
+  <fieldset data-hook="edit_image">
+    <div class="eleven columns omega">
+      <%= render :partial => 'form', :locals => { :f => f } %>
+    </div>
+    <div class="clear"></div>
+
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('actions.update'), 'icon-refresh' %>
+      <span class="or"><%= Spree.t(:or) %></span>
+      <%= link_to Spree.t('actions.cancel'), admin_product_stock_emails_url(@product), :id => 'cancel_link', :class => 'button icon-remove' %>
+    </div>
+  </fieldset>
+<% end %>

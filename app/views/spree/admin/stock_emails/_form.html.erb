@@ -1,0 +1,16 @@
+<div data-hook="admin_stock_mailer_form_fields">
+  <div class="four columns alpha">
+    <div data-hook="email" class="field">
+      <%= f.label Spree.t(:email) %><br>
+      <%= f.email_field :email %>
+    </div>
+  </div>
+  <div class="four columns alpha">
+    <div data-hook="sent_at" class="field">
+      <%= f.label Spree.t(:sent_at) %><br>
+      <%= f.text_field :sent_at, :value => datepicker_field_value(@stock_email.sent_at), :class => 'datepicker datepicker-from' %>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
