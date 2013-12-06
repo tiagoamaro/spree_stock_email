@@ -1,11 +1,15 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
+  activerecord:
+    models:
+      spree/stock_email: "Stock Email"
   spree:
+    back_to_stock_mailer: Back To Stock Mailer
+    not_sent: Not Sent
+    sent_at: Sent At
     stock_email:
       messages:
         already_registered: "Already registered for notifications on this product"
         back_in_stock_email_message: "We'll email you when %{product} is back in stock!"
       email:
           subject: "Products are back in stock!"
+    stock_mailer: "Stock Mailer"
