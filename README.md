@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-1-stable)](https://travis-ci.org/tiagoamaro/spree_stock_email)
 
 > Note:
-> This fork uses product's variants to notify users
+> This fork uses products' variants to notify users
 
 Allow users to create notifications of when products are back in stock.
 
