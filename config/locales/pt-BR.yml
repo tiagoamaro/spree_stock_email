@@ -8,7 +8,7 @@ pt-BR:
     sent_at: "Enviado em"
     stock_email:
       messages:
-        already_registered: "Você já está cadastrado. Um email será enviado para você quando este produto estiver em estoque"
+        already_registered: "já está cadastrado. Um email será enviado para você quando este produto estiver em estoque."
         back_in_stock_email_message: "Um email será enviado para você quando o %{product} estiver em estoque!"
       email:
           subject: "Produto %{product} está em estoque"
