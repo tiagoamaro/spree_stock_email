@@ -11,5 +11,5 @@ en:
         already_registered: "Already registered for notifications on this product"
         back_in_stock_email_message: "We'll email you when %{product} is back in stock!"
       email:
-          subject: "Products are back in stock!"
+          subject: "Product %{product} is back in stock!"
     stock_mailer: "Stock Mailer"
