@@ -19,7 +19,7 @@ describe 'Stock Email' do
         within "#stock_email_#{se.id}" do
           page.should have_content se.email
           page.should have_content se.variant.options_text
-          page.should have_content se.sent_at
+          page.should have_content I18n.l(se.sent_at, format: '%a, %d %b %Y %H:%M:%S')
         end
       end
 
@@ -69,7 +69,7 @@ describe 'Stock Email' do
     click_link 'Stock Mailer'
 
     page.should have_content stock_email.email
-    page.should have_content stock_email.sent_at
+    page.should have_content I18n.l stock_email.sent_at, format: '%a, %d %b %Y %H:%M:%S'
 
     click_icon :edit
 
@@ -79,7 +79,7 @@ describe 'Stock Email' do
     click_button 'Update'
 
     page.should have_content 'othermail@mail.com'
-    page.should have_content '2013-11-11'
+    page.should have_content I18n.l Time.new(2013, 11, 11), format: '%a, %d %b %Y %H:%M:%S'
   end
 
   it 'deletes email from registered list', js: true do

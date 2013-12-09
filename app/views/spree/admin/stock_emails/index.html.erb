@@ -20,7 +20,7 @@
           <%= variant_name %>
         </td>
         <td class="align-center">
-          <% sent_at_text = se.sent_at ? se.sent_at : Spree.t(:not_sent) %>
+          <% sent_at_text = se.sent_at ? I18n.l(se.sent_at, format: '%a, %d %b %Y %H:%M:%S') : Spree.t(:not_sent) %>
           <%= sent_at_text %>
         </td>
         <td class="actions">
