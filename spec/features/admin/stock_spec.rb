@@ -22,5 +22,11 @@ describe 'Products Stock' do
 
     select2 variant2.sku, from: "Variant"
     click_button "Add Stock"
+
+    # Email is triggered when goes from 0 to any number above 1 stock
+    Spree::StockEmail.should_receive(:notify).once.with(variant1)
+    fill_in 'stock_movement_quantity', with: '10'
+    select2 variant1.sku, from: "Variant"
+    click_button "Add Stock"
   end
 end
