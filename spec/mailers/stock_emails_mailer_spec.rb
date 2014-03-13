@@ -5,9 +5,8 @@ describe Spree::StockEmailsMailer do
 
   it 'notifies user about in stock product' do
     mail = Spree::StockEmailsMailer.stock_email stock_email
-    mail.subject.should eq "Product #{stock_email.variant.product.name} is back in stock!"
-    mail.body.should have_content stock_email.variant.product.name
-    mail.body.should have_content stock_email.variant.options_text
+    mail.subject.should eq "Product #{stock_email.product.name} is back in stock!"
+    mail.body.should have_content stock_email.product.name
     mail.body.should have_content "is back in stock"
   end
 

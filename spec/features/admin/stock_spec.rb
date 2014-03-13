@@ -14,17 +14,18 @@ describe 'Products Stock' do
   end
 
   it 'does not send email if product is already in stock', js: true do
-    Spree::StockEmail.should_receive(:notify).once.with(variant2)
+    Spree::StockEmail.should_receive(:notify).once.with(product)
 
+    # Should send an email warning the user that the product is back in stock
     visit spree.stock_admin_product_path(product)
     select2 variant2.sku, from: "Variant"
     click_button "Add Stock"
 
+    # Should not send an email
     select2 variant2.sku, from: "Variant"
     click_button "Add Stock"
 
-    # Email is triggered when goes from 0 to any number above 1 stock
-    Spree::StockEmail.should_receive(:notify).once.with(variant1)
+    # Email is not triggered when product already has a variant in stock
     fill_in 'stock_movement_quantity', with: '10'
     select2 variant1.sku, from: "Variant"
     click_button "Add Stock"

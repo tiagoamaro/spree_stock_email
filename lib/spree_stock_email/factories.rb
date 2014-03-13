@@ -5,7 +5,7 @@ FactoryGirl.define do
   # require 'spree_stock_email/factories'
 
   factory :stock_email, class: Spree::StockEmail do
-    variant
+    product
     sequence(:email) { |n| "name#{n}@email.com" }
     sent_at Time.now
   end

@@ -6,7 +6,6 @@
   <thead data-hook="stock_mailer_header">
     <tr>
       <th><%= Spree.t(:email) %></th>
-      <th><%= Spree.t(:variant) %></th>
       <th><%= Spree.t(:sent_at) %></th>
       <th class="actions"></th>
     </tr>
@@ -15,10 +14,6 @@
     <% @stock_emails.each do |se| %>
       <tr id="stock_email_<%= se.id %>">
         <td class="align-center"><%= se.email %></td>
-        <td class="align-center">
-          <% variant_name = se.variant.is_master ? se.variant.product.name : se.variant.options_text %>
-          <%= variant_name %>
-        </td>
         <td class="align-center">
           <% sent_at_text = se.sent_at ? I18n.l(se.sent_at, format: '%a, %d %b %Y %H:%M:%S') : Spree.t(:not_sent) %>
           <%= sent_at_text %>
