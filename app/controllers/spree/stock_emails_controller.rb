@@ -1,7 +1,7 @@
 class Spree::StockEmailsController < ApplicationController
 
   def create
-    product = Spree::Product.find_by(permalink: stock_email_params[:product])
+    product = Spree::Product.find_by(:slug => stock_email_params[:product])
     redirect_to :back and return unless product
 
     current_email = spree_current_user ? spree_current_user.email : stock_email_params[:email]

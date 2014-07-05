@@ -8,7 +8,7 @@ module Spree
       end
 
       def load_data
-        @product = Product.find_by_permalink(params[:product_id])
+        @product = Product.find_by(:slug => params[:product_id])
         @stock_emails = Spree::StockEmail.where(product_id: @product.id)
       end
     end

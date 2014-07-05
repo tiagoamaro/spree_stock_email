@@ -15,6 +15,3 @@ env:
   - DB=sqlite
   - DB=mysql
   - DB=postgres
-branches:
-  only:
-    - 2-1-stable
