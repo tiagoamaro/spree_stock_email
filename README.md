@@ -1,7 +1,7 @@
 #SpreeStockEmail
 
-[![Build Status](https://travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-1-stable)](https://travis-ci.org/tiagoamaro/spree_stock_email)
-[![Coverage Status](https://coveralls.io/repos/tiagoamaro/spree_stock_email/badge.png?branch=2-1-stable)](https://coveralls.io/r/tiagoamaro/spree_stock_email?branch=2-1-stable)
+[![Build Status](https://travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-2-stable)](https://travis-ci.org/tiagoamaro/spree_stock_email)
+[![Coverage Status](https://coveralls.io/repos/tiagoamaro/spree_stock_email/badge.png?branch=2-2-stable)](https://coveralls.io/r/tiagoamaro/spree_stock_email?branch=2-1-stable)
 
 > Note:
 > This fork uses products' variants to notify users
