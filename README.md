@@ -1,7 +1,7 @@
 #SpreeStockEmail
 
-[![Build Status](https://travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-1-stable)](https://travis-ci.org/tiagoamaro/spree_stock_email)
-[![Coverage Status](https://coveralls.io/repos/tiagoamaro/spree_stock_email/badge.png?branch=2-1-stable)](https://coveralls.io/r/tiagoamaro/spree_stock_email?branch=2-1-stable)
+[![Build Status](https://api.travis-ci.org/tiagoamaro/spree_stock_email.png?branch=2-2-stable-product)](https://travis-ci.org/tiagoamaro/spree_stock_email)
+[![Coverage Status](https://coveralls.io/repos/tiagoamaro/spree_stock_email/badge.png?branch=2-2-stable-product)](https://coveralls.io/r/tiagoamaro/spree_stock_email?branch=2-1-stable)
 
 Allow users to create notifications of when products are back in stock.
 
